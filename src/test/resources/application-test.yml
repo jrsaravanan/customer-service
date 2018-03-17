@@ -1,0 +1,17 @@
+#spring.jpa.hibernate.ddl-auto=update
+
+logging:
+ level: DEBUG
+
+server:
+  port: ${PORT:0}
+spring:
+ datasource:
+  url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;
+ jpa:
+  hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+  hibernate.ddl-auto: create-drop
+  hibernate.format_sql: true
+  show-sql: true
+
+test: test_valeu    

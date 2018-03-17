@@ -1,0 +1,35 @@
+#spring.jpa.hibernate.ddl-auto=update
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: customer-service
+  boot:
+   admin:
+    url: ${CUSTOMER_ADMIN_URI:http://localhost:9000 }
+  datasource:
+   url: ${CUSTOMER_DB_URI:jdbc:mysql://localhost:3306/customers}
+   username: ${CUSTOMER_APP_USER:appuser}
+   password: ${CUSTOMER_APP_PASSWORD:appuser}
+   driver-class-name: com.mysql.jdbc.Driver  
+  jpa:
+   hibernate.ddl-auto: create
+   hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+   hibernate.format_sql: true
+   show-sql: true
+
+management:
+ security:
+  enabled: false    
+
+logging:
+  file: logs/customer-service.log
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URI:http://127.0.0.1:8761/eureka}
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${random.int}
