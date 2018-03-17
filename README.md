@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/jrsaravanan/customer-service.svg?branch=master)](https://travis-ci.org/jrsaravanan/customer-service)
+
 Customer Service
 --
 
