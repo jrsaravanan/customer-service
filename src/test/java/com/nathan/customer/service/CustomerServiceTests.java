@@ -67,7 +67,7 @@ public class CustomerServiceTests {
 
 		List<Customer> collection = Arrays.asList(mockCustomerObject());
 		given(this.repository.findAll()).willReturn(collection);
-		List<CustomerResponse> response = service.getCustomers();
+		List<CustomerResponse> response = service.getCustomers("test");
 		assertThat(response.get(0).getFirstName(), equalTo("TEST_FIRST"));
 		assertThat(response.get(0).getLastName(), equalTo("TEST_LAST"));
 

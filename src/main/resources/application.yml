@@ -24,6 +24,8 @@ management:
   enabled: false    
 
 logging:
+  level:
+    org.springframework.boot.autoconfigure.jdbc: DEBUG
   file: logs/customer-service.log
 
 eureka:

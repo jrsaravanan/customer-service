@@ -9,12 +9,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nathan.customer.config.TenantContext;
 import com.nathan.customer.dto.CustomerRequest;
 import com.nathan.customer.dto.CustomerResponse;
 import com.nathan.customer.dto.PingResponse;
@@ -52,8 +54,9 @@ public class CustomerServiceResource {
 	 */
 	@RequestMapping(method = RequestMethod.GET , path ="" , produces = { MediaType.APPLICATION_JSON_VALUE , MediaType.APPLICATION_XML_VALUE })
 	@ResponseStatus(code = HttpStatus.OK)
-	public List<CustomerResponse> getAllCustomers() {
-		return customerService.getCustomers();
+	public List<CustomerResponse> getAllCustomers(@RequestHeader("X-TenantID") String tenantName) {
+		TenantContext.setCurrentTenant(tenantName);
+		return customerService.getCustomers(tenantName);
 	}
 	
 	

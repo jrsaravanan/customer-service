@@ -97,9 +97,9 @@ public class CustomerServiceApplicationTests {
 		
 		List<CustomerResponse> collection = Arrays.asList(response);
 		
-		given(customerService.getCustomers()).willReturn(collection);
+		given(customerService.getCustomers(any(String.class))).willReturn(collection);
 
-		mockMvc.perform(get("/v1.0/customers")
+		mockMvc.perform(get("/v1.0/customers").header("X-TenantID", "test")
 			      .contentType(MediaType.APPLICATION_JSON))
 			      .andExpect(status().isOk())
 			      .andExpect(jsonPath("$[0].firstName", is(response.getFirstName())))

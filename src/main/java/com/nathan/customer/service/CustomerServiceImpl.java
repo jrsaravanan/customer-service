@@ -12,6 +12,7 @@ import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.nathan.customer.config.TenantContext;
 import com.nathan.customer.dto.CustomerRequest;
 import com.nathan.customer.dto.CustomerResponse;
 import com.nathan.customer.entity.Customer;
@@ -49,8 +50,9 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<CustomerResponse> getCustomers() {
+	public List<CustomerResponse> getCustomers(String tenantName) {
 		
+		TenantContext.setCurrentTenant(tenantName);
 		List<Customer> collection = customerRepository.findAll();
 		
 		return collection.stream()

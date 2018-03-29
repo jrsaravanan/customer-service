@@ -19,8 +19,9 @@ public interface CustomerService {
 	
 	/**
 	 * get all customers
+	 * @param tenantName 
 	 */
-	public List<CustomerResponse> getCustomers();
+	public List<CustomerResponse> getCustomers(String tenantName);
 
 	/**
 	 * save customer 

@@ -157,7 +157,7 @@ public class CustomerServiceApplicationIntegrationTests {
 		// add new customer
 		createNewCustomer();
 				
-		MvcResult result = mockMvc.perform(get("/v1.0/customers")
+		MvcResult result = mockMvc.perform(get("/v1.0/customers").header("X-TenantID", "test")
 				.accept(MediaType.APPLICATION_JSON)
 			      .contentType(MediaType.APPLICATION_JSON))
 			      .andExpect(status().isOk())
