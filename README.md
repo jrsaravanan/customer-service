@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/jrsaravanan/customer-service.svg?branch=master)](https://travis-ci.org/jrsaravanan/customer-service)        [![wercker status](https://app.wercker.com/status/4da7376a0d4f8b6b3aa3620c7ae0eadd/m/master "wercker status")](https://app.wercker.com/project/byKey/4da7376a0d4f8b6b3aa3620c7ae0eadd) 
+[![Build Status](https://travis-ci.org/jrsaravanan/customer-service.svg?branch=master)](https://travis-ci.org/jrsaravanan/customer-service)    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     [![wercker status](https://app.wercker.com/status/4da7376a0d4f8b6b3aa3620c7ae0eadd/m/master "wercker status")](https://app.wercker.com/project/byKey/4da7376a0d4f8b6b3aa3620c7ae0eadd)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![codecov](https://codecov.io/gh/jrsaravanan/customer-service/branch/master/graph/badge.svg)](https://codecov.io/gh/jrsaravanan/customer-service)
 
 Customer Service
 --
